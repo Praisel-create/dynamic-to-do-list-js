@@ -8,25 +8,26 @@ document.addEventListener('DOMContentLoaded', function () {
     function addTask() {
         const taskText = taskInput.value.trim();
 
-        if (taskText === "") {
+        if (!(taskText === "")) {
+            const listItem = document.createElement('li');
+            listItem.textContent = taskText;
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = "Remove";
+            removeButton.className = 'remove-btn';
+
+            removeButton.onclick = function () {
+                taskList.removeChild(listItem);
+            };
+
+            listItem.appendChild(removeButton);
+            taskList.appendChild(listItem);
+            taskInput.value = "";
+        }
+         else {
             alert("Please enter a task!");
             return;
-        } else {
-
-        const listItem = document.createElement('li');
-        listItem.textContent = taskText;
-
-        const removeButton = document.createElement('button');
-        removeButton.textContent = "Remove";
-        removeButton.className = 'remove-btn';
-
-        removeButton.onclick = function () {
-            taskList.removeChild(listItem);
-        };
-
-        listItem.appendChild(removeButton);
-        taskList.appendChild(listItem);
-        taskInput.value = "";}
+        }
     }
 
     // Event listeners for adding tasks
