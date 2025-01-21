@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function addTask() {
         const taskText = taskInput.value.trim();
 
-        if (!(taskText === "")) {
+        if (!taskText === "") {
             const listItem = document.createElement('li');
             listItem.textContent = taskText;
 
