@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const taskText = taskInput.value.trim();
 
         if (taskText !== "") {
-            const listItem = document.createElement('li');
+            const listItem = document.createElement('<li>');
             listItem.textContent = taskText;
 
             // Create "Remove" button
