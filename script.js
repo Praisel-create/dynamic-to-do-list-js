@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
+        if (taskText !== ""){
         // Create <li> element
         const listItem = document.createElement('li');
         listItem.textContent = taskText;
@@ -42,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Clear the input field for new tasks
         taskInput.value = "";
+    }
     }
 
     // Attach event listeners
